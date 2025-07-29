@@ -26,6 +26,12 @@ on:
   schedule:
     - cron: '24 14 * * 3'
 
+permissions:
+  actions: read
+  contents: read
+  security-events: write
+  id-token: write
+
 jobs:
   MSDO:
     # currently only windows latest is supported
