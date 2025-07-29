@@ -28,8 +28,8 @@ jobs:
         with:
           languages: cpp
           build-mode: manual
-          packs: microsoft/windows-drivers@1.1.0
-          queries: code-scanning,security-extended,security-experimental,security-and-quality
+          packs: microsoft/windows-drivers@1.6.0
+          queries: code-scanning,security-extended,security-experimental,security-and-quality,windows-driver-suites/windows_driver_recommended.qls
       - name: Build Driver
         shell: cmd
         working-directory: ${{github.workspace}}
