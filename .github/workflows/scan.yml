@@ -28,7 +28,8 @@ jobs:
         with:
           languages: cpp
           build-mode: manual
-          config-file: microsoft/Windows-Driver-Developer-Supplemental-Tools/config/codeql-config.yml@development
+          packs: microsoft/windows-drivers@1.1.0
+          queries: code-scanning,security-extended,security-experimental,security-and-quality
       - name: Build Driver
         shell: cmd
         working-directory: ${{github.workspace}}
