@@ -24,6 +24,7 @@ jobs:
     - name: Install VC++ Packages
       shell: pwsh
       run: |
+        winget install --id Microsoft.VisualStudio.2022.Enterprise --override "--quiet --add Microsoft.VisualStudio.Component.VC.Runtimes.x86.x64.Spectre"
         $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
         $installPath = & $vswhere -latest -products * -property installationPath
         & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\setup.exe" update --passive --norestart --installPath "$installPath"
