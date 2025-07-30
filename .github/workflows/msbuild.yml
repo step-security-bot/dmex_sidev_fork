@@ -21,6 +21,12 @@ jobs:
     - uses: actions/checkout@v4
     - name: Install Nuget Packages
       run: nuget restore .\packages.config -PackagesDirectory .\packages\
+    - name: Install VC++ Packages
+      shell: pwsh
+      run: |
+        $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+        $installPath = & $vswhere -latest -products * -property installationPath
+        & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\setup.exe" update --passive --norestart --installPath "$installPath"
     - name: Build Init
       shell: cmd
       working-directory: ${{github.workspace}}
