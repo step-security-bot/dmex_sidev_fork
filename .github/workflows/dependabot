@@ -1,0 +1,26 @@
+version: 2
+registries:
+  nuget-public:
+    type: nuget-feed
+    url: https://api.nuget.org/v3/index.json
+updates:
+- package-ecosystem: "github-actions"
+  directory: "/"
+  reviewers:
+    - "dmex"
+- package-ecosystem: nuget
+  directory: "/"
+  groups:
+    xunit:
+      patterns:
+        - *
+  open-pull-requests-limit: 99
+- package-ecosystem: nuget
+  directory: "/src/CHANGE_ME"
+  schedule:
+    interval: daily
+    time: "05:30"
+    timezone: Europe/London
+  reviewers:
+    - "martincostello"
+  open-pull-requests-limit: 99
