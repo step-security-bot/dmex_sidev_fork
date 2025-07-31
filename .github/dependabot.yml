@@ -12,17 +12,10 @@ updates:
     - "dmex"
 - package-ecosystem: nuget
   directory: "/"
-  groups:
-    xunit:
-      patterns:
-        - *
-  open-pull-requests-limit: 99
-- package-ecosystem: nuget
-  directory: "/src/CHANGE_ME"
   schedule:
     interval: daily
     time: "05:30"
     timezone: Europe/London
   reviewers:
-    - "martincostello"
+    - "dmex"
   open-pull-requests-limit: 99
