@@ -3,15 +3,9 @@ updates:
 - package-ecosystem: "github-actions"
   directory: "/"
   schedule:
-    interval: "daily"
-  reviewers:
-    - "dmex"
-- package-ecosystem: nuget
+    interval: "weekly"
+
+- package-ecosystem: "nuget"
   directory: "/"
   schedule:
-    interval: daily
-    time: "05:30"
-    timezone: Europe/London
-  reviewers:
-    - "dmex"
-  open-pull-requests-limit: 99
+    interval: "weekly"
