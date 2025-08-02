@@ -9,3 +9,13 @@ updates:
   directory: "/"
   schedule:
     interval: "weekly"
+
+- package-ecosystem: nuget
+  directory: /tools/CustomBuildTool
+  schedule:
+    interval: daily
+
+- package-ecosystem: nuget
+  directory: /tools/GenerateZw
+  schedule:
+    interval: daily
